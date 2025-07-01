@@ -1,78 +1,80 @@
-# SecuTable - Cybersecurity Tabletop Exercise Platform
-A professional, full-stack platform for creating, running, and analyzing cybersecurity tabletop exercises with AI-powered insights and real-time collaboration.
+# SecuTable
 
-# Core Features
+**AI-powered Cybersecurity Tabletop Exercises. Built for Resilience. Open for All.**
 
-# Scenario Management
-    - Comprehensive Scenario Builder: Create detailed cybersecurity scenarios with background context, risk themes, and exercise assumptions
-    - Rich Text Editing: Full scenario details including title, description, background, key themes, and assumptions
-    - Scenario Library: View, edit, and manage all your created scenarios in an organized dashboard
+SecuTable is an open-source platform for running structured, AI-assisted tabletop simulations. Teams can define scenarios, manage injects, upload their incident response plans (IRPs), and receive GPT-generated after action reports with performance analysis and improvement recommendations.
 
-# Incident Response Plan (IRP) Integration
-    - Document Upload: Upload IRP documents in PDF, DOCX, Markdown, or TXT formats
-    - Document Storage: Secure file storage using Supabase Storage with proper access controls
-    - IRP Parsing: Extract and integrate IRP content into exercise scenarios
-    - Document Management: Organize and reference IRP documents during exercises
+# 🌍 Project Vision
+Resilience shouldn't be a black box. By open-sourcing SecuTable, we hope to improve how security teams learn, rehearse, and evolve their real-world incident response capabilities.
 
-# Inject Timeline System
-    - Timed Injects: Create injects with specific time offsets (e.g., T+5, T+15 minutes)
-    - Role-Based Targeting: Assign injects to specific roles (Incident Commander, Technical Lead, etc.)
-    - Dynamic Timeline: Add, edit, and remove injects during scenario creation
-    - Real-time Delivery: Track inject delivery and participant responses
+---
 
-# Collaborative Comments
-    - Real-time Comments: Add comments to individual injects during exercises
-    - User Attribution: Track who made each comment with timestamps
-    - Comment Management: Edit and delete comments with proper permissions
-    - Exercise Documentation: Capture insights and observations during tabletop exercises
+## ✳️ Features
 
-# AI-Powered Analysis
-    - After Action Reports: Generate comprehensive AARs using OpenAI GPT-4
-    - Intelligent Insights: AI analysis of exercise outcomes and participant responses
-    - Recommendation Engine: Get actionable recommendations for improving incident response
-    - Automated Summaries: Generate executive summaries and key findings
+- ✅ Scenario builder: background, risks, assumptions, timeline
+- ⏱️ Timed and manual injects with role assignment
+- 📥 IRP upload and GPT-powered phase parsing
+- 📊 Performance scoring: on-time, delayed, missed
+- 🧠 After Action Report: GPT feedback + IRP enhancement suggestions
+- 📝 Optional comments on each inject
+- 📄 PDF report export
+- 🔐 User auth with Supabase
+- 🌐 Built with Next.js, Tailwind CSS, Supabase, and GPT-4
 
-# User Management & Security
-    - Supabase Authentication: Secure user registration and login
-    - Row Level Security (RLS): Complete data isolation between users
-    - Role-Based Access: Users can only access their own scenarios and data
-    - Session Management: Secure session handling with automatic logout
+---
 
-# Modern UI/UX
-    - Responsive Design: Works seamlessly on desktop, tablet, and mobile devices
-    - Professional Interface: Clean, modern design built with Tailwind CSS
-    - Intuitive Navigation: Easy-to-use interface for scenario creation and management
-    - Real-time Updates: Live updates without page refreshes
+## 🚀 Quickstart
 
-# Database & Storage
-    - PostgreSQL Database: Robust data storage with proper relationships
-    - File Storage: Secure document storage with access controls
-    - Data Migration: Comprehensive migration system for database schema updates
-    - Backup & Recovery: Built-in data protection and recovery capabilities
+### 1. Clone the repo
 
-# Technical Stack
-    - Frontend: Next.js 15, React 18, TypeScript, Tailwind CSS
-    - Backend: Supabase (PostgreSQL, Auth, Storage, Edge Functions)
-    - AI Integration: OpenAI GPT-4 API
-    - Deployment: Vercel-ready with environment configuration
-    - Development: Hot reload, TypeScript compilation, ESLint
+```bash
+git clone https://github.com/YOUR_USERNAME/secutable.git
+cd secutable
+```
 
-# Use Cases
-    - Security Teams: Create realistic incident response scenarios
-    - Training Programs: Develop cybersecurity training exercises
-    - Compliance Testing: Validate incident response procedures
-    - Team Building: Improve collaboration and communication during incidents
-    - Risk Assessment: Identify gaps in incident response capabilities
+### 2. Install Dependencies
 
-# Security Features
-    - Data Isolation: Complete user data separation
-    - Secure Authentication: Supabase Auth with proper session management
-    - File Security: Encrypted document storage with access controls
-    - Input Validation: Comprehensive input sanitization and validation
-    - Error Handling: Secure error handling without information leakage
+```npm install```
 
-# Reporting & Analytics
-    - Exercise Reports: Detailed reports of tabletop exercise outcomes
-    - Participant Tracking: Monitor participant engagement and responses
-    - Performance Metrics: Track scenario effectiveness and completion rates
-    - Export Capabilities: Export reports and data for external analysis
+### 3. Start Supabase locally
+
+Ensure Docker is running, then:
+
+```supabase start```
+
+### 4. Set up your environment
+
+Create a .env.local file based on the provided .env.example:
+
+```NEXT_PUBLIC_SUPABASE_URL=your-local-or-hosted-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+```
+
+### 5. Run the app
+
+```npm run dev```
+
+### 🧪 Seed Sample Data (Optional)
+You can seed a demo scenario, injects, and mock IRP with:
+
+```ts-node scripts/seed.ts```
+
+
+# 📦 Tech Stack
+
+- Next.js (App Router)
+- Supabase (DB, Auth, Storage)
+- Tailwind CSS (UI)
+- OpenAI GPT-4 (reporting + IRP analysis)
+
+
+ # 🤝 Contributing
+
+1. Fork the repo
+2. Create a new branch (git checkout -b feature/your-feature)
+3. Commit changes and push (git push origin feature/your-feature)
+4. Open a pull request
+
+# 🪪 License
+
+MIT — free for personal or commercial use. Attribution appreciated.
